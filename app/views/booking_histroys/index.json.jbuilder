@@ -1,0 +1,1 @@
+json.array! @booking_histroys, partial: 'booking_histroys/booking_histroy', as: :booking_histroy

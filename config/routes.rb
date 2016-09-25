@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :searches
+  resources :booking_histroys
+  resources :rooms
   get 'contact/index'
 
   get 'contact/show'
@@ -48,7 +51,18 @@ Rails.application.routes.draw do
 
   post 'login' => 'sessions#create'
 
+  resources :rooms do
+    member do
+      get 'book'
+    end
+  end
 
+  resources :booking_histroys do
+    member do
+      post 'validBooking'
+      get 'releaseBooking'
+    end
+  end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
