@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'pages/show'
+
+  get 'pages/index'
+
   get 'contact/index'
 
   get 'contact/show'
@@ -37,7 +41,6 @@ Rails.application.routes.draw do
 
   root 'home#show'
 
-  get 'admin' =>'admin/front#index'
   get 'logg' =>'logg/front#show'
   get 'login' =>'sessions#new'
   get 'user' => 'home#show'
@@ -47,6 +50,7 @@ Rails.application.routes.draw do
   get 'about' =>'about#index'
 
   post 'login' => 'sessions#create'
+  get 'admin' =>'admin/front#show'
 
 
 

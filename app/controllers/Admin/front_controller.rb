@@ -9,6 +9,7 @@ class Admin::FrontController < ApplicationController
   def edit
 
   end
+  
   layout 'admin/application'
 
 end
