@@ -4,4 +4,5 @@ class User::FrontController < ApplicationController
 
   def show
   end
+
 end

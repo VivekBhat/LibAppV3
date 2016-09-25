@@ -32,8 +32,8 @@
             <li class="active"><%= link_to "Home", home_path %></li>
             <li><%= link_to "About", about_index_path %></li>
             <li><%= link_to "Contact", contact_path %></li>
-            <li><%= link_to "LogIn", logg_path %></li>
-            <li><%= link_to "LogOut", logout_path %></li>
+            <li><%= link_to "LogIn", login_path %></li>
+            <li><%= link_to "LogOut", logout_path, method: :delete %></li>
 
           </ul>
         </div><!--/.nav-collapse -->
@@ -46,8 +46,12 @@
 <section>
 
   <div class="container">
+
     <div class="row">
       <div class="col-md-8">
+        <% flash.each do|type,message|   %>
+            <div class="alert alert-<%=type%>"><%=message %></div>
+        <% end %>
         <%= yield %>
 
       </div>

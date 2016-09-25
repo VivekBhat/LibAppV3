@@ -5,6 +5,10 @@ class Admin::FrontController < ApplicationController
 
   def show
   end
+
+  def edit
+
+  end
   layout 'admin/application'
 
 end

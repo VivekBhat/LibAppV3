@@ -36,12 +36,13 @@ Rails.application.routes.draw do
   get 'admin' =>'admin/front#index'
   get 'logg' =>'logg/front#show'
   get 'login' =>'sessions#new'
-
+  get 'user' => 'home#show'
   get 'home' =>'home#show'
   get 'contact' =>'home#show'
   get 'logout' =>'sessions#destroy'
 
   post 'login' => 'sessions#create'
+
 
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
