@@ -1,71 +1,71 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Untitled1</title>
-    <%= csrf_meta_tags %>
+<head>
+  <title>Untitled1</title>
+  <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
-  <body>
+<body>
 
-  <nav class="navbar navbar-inverse" role="navigation">
-    <div class="container">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="#">Project name</a>
-      </div>
-      <div id="navbar" class="collapse navbar-collapse">
-        <ul class="nav navbar-nav">
-          <li class="active"><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href="#">Link</a></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><a href="#">Action</a></li>
-              <li><a href="#">Another action</a></li>
-              <li><a href="#">Something else here</a></li>
-              <li role="separator" class="divider"></li>
-              <li><a href="#">Separated link</a></li>
-            </ul>
-        </ul>
-      </div><!--/.nav-collapse -->
+<nav class="navbar navbar-inverse" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Project name</a>
     </div>
-  </nav>
+    <div id="navbar" class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li class="active"><%= link_to "Home", home_path %></li>
+            <li><%= link_to "About", about_index_path %></li>
+            <li><%= link_to "Contact", contact_path %></li>
+            <li><%= link_to "LogIn", logg_path %></li>
+            <li><%= link_to "LogOut", logout_path %></li>
 
-  <section>
+          </ul>
+        </div><!--/.nav-collapse -->
 
-    <div class="container">
-      <div class="row">
-        <div class="col-md-8">
-          <%= yield %>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div>
+</nav>
 
-        </div>
-        <div class="col-md-4">
-<%= render 'partials/sidebar' %>
-        </div>
+<section>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <%= yield %>
+
       </div>
-
+      <div class="col-md-4">
+        <%= render 'partials/sidebar' %>
+      </div>
     </div>
-  </section>
 
-  <%= render 'partials/footer' %>
+  </div>
+</section>
 
-  <!-- Bootstrap core JavaScript
-  ================================================== -->
-  <!-- Placed at the end of the document so the pages load faster -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script src="js/bootstrap.js"></script>
+<%= render 'partials/footer' %>
 
-  </body>
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="js/bootstrap.js"></script>
+
+</body>
 </html>

@@ -4,4 +4,7 @@ class Logg::FrontController < ApplicationController
 
   def show
   end
+
+  layout 'login/application'
+
 end

@@ -14,23 +14,35 @@ Rails.application.routes.draw do
   get 'home/show'
 
   get 'home/index'
+
+  namespace :admin do
+    get 'front/index'
+  end
+
+  namespace :admin do
+    get 'front/show'
+  end
+
+  namespace :user do
+    get 'front/index'
+  end
+
+  namespace :user do
+    get 'front/show'
+  end
+
+  root 'home#show'
+
   get 'admin' =>'admin/front#index'
-  namespace :admin do
-    get 'front/index'
-  end
+  get 'logg' =>'logg/front#show'
+  get 'login' =>'sessions#new'
 
-  namespace :admin do
-    get 'front/show'
-  end
+  get 'home' =>'home#show'
+  get 'contact' =>'home#show'
+  get 'logout' =>'sessions#destroy'
 
-  namespace :user do
-    get 'front/index'
-  end
+  post 'login' => 'sessions#create'
 
-  namespace :user do
-    get 'front/show'
-  end
 
-  root 'home#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
