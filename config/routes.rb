@@ -1,14 +1,12 @@
 Rails.application.routes.draw do
-<<<<<<< HEAD
   get 'pages/show'
 
   get 'pages/index'
 
-=======
   resources :searches
   resources :booking_histroys
   resources :rooms
->>>>>>> 1b84b8abf57d480c1152ec11f176c3290cb0bbec
+  
   get 'contact/index'
 
   get 'contact/show'
@@ -71,5 +69,6 @@ Rails.application.routes.draw do
     end
   end
 
+get 'room' => 'rooms#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

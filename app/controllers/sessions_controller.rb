@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       flash[:success] = "Welcome to Library App"
 
-      redirect_to pages_show_path
+      redirect_to rooms_path
 
     elsif (user && user.password_digest == params[:password] && user.ornot == 0)
 
