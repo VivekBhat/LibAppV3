@@ -1,9 +1,6 @@
 Rails.application.routes.draw do
-<<<<<<< HEAD
   resources :reservation_histroys
-=======
   resources :adminpages
->>>>>>> 378f9895d1468d5016cb1ededd02a305178b951c
   get 'pages/show'
 
   get 'pages/index'
