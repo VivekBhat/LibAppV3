@@ -44,6 +44,7 @@ Rails.application.routes.draw do
   get 'home' =>'home#show'
   get 'contact' =>'contact#show'
   get 'logout' =>'sessions#destroy'
+  get 'about' =>'about#index'
 
   post 'login' => 'sessions#create'
 
