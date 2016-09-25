@@ -21,14 +21,13 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="<%= home_index_path%>">Library App</a>
+        <a class="navbar-brand" href="#">Project name</a>
       </div>
-      <div id="navbar" class="collapse navbar-collapse">
       <div id="navbar" class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
           <li><%= link_to "Home", home_index_path %>></li>
           <li><%= link_to "Bookings", admin_front_show_path %>></li>
-          <li class="active"><%= link_to "Manage Accounts", admin_front_index_path %>></li>
+          <li class="active"><%= link_to "Manage About", admin_front_index_path %>></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <li><a href="#">Link</a></li>
@@ -41,11 +40,9 @@
               <li role="separator" class="divider"></li>
               <li><a href="#">Separated link</a></li>
             </ul>
-          </li>
           </ul>
 
       </div><!--/.nav-collapse -->
-    </div>
     </div>
   </nav>
 
@@ -62,7 +59,9 @@
     </div>
   </section>
 
-  <%= render 'partials/footer' %>
+  <footer>
+    <p>Copyright &copy; 2016, LibApp <a href="login.html">Admin Login</a></p>
+  </footer>
   <!-- Bootstrap core JavaScript
   ================================================== -->
   <!-- Placed at the end of the document so the pages load faster -->

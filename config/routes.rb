@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  namespace :logg do
+    get 'front/index'
+  end
+
+  namespace :logg do
+    get 'front/show'
+  end
+
   get 'about/show'
 
   get 'about/index'
@@ -6,7 +14,7 @@ Rails.application.routes.draw do
   get 'home/show'
 
   get 'home/index'
-
+  get 'admin' =>'admin/front#index'
   namespace :admin do
     get 'front/index'
   end
