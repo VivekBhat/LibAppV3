@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'ruby'
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
@@ -31,7 +33,6 @@ gem 'bcrypt-ruby', :require => "bcrypt"
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
 gem 'mail_form'
-gem 'simple_form'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
