@@ -1,0 +1,41 @@
+<%= form_for(@room) do |f| %>
+    <% if @room.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@room.errors.count, "error") %> prohibited this room from being saved:</h2>
+
+          <ul>
+            <% @room.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <div class="field">
+      <%= f.label :roomNumber %><br>
+      <%= f.number_field :roomNumber %>
+    </div>
+    <div class="field">
+      <%= f.label :size %><br>
+      <%= f.select :size, ['small', 'medium', 'large'] %>
+    </div>
+    <div class="field">
+      <%= f.label :status %><br>
+      <%= f.select :status, ['Available', 'Booked'] %>
+    </div>
+    <div class="field">
+      <%= f.label :building %><br>
+      <%= f.select :building, ['James B. Hunt', 'D.H. Hill'] %>
+    </div>
+    <div class="field">
+      <%= f.label :date %><br>
+      <%= f.date_select :date %>
+    </div>
+    <div class="field">
+      <%= f.label :time %><br>
+      <%= f.time_select :time %>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+<% end %>

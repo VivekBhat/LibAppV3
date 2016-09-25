@@ -1,0 +1,46 @@
+<h1>Book Room <%=@room.roomNumber %></h1>
+<% if flash[:warning] %>
+    <div class="notice"><%= flash[:warning] %></div>
+<% end %>
+
+<%= form_for(@room, url: validBooking_booking_histroy_path(@room),method: :post) do |f| %>
+    <% if @room.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@room.errors.count, "error") %> prohibited this room from being saved:</h2>
+
+          <ul>
+            <% @room.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <br>
+    Room Number : <%= @room.roomNumber %>
+    <br>
+
+    <br>
+    Room Size : <%= @room.size %>
+    <br>
+
+    <br>
+    Building : <%= @room.building %>
+    <br>
+    <br>
+
+    <div class="field">
+      <%= f.label :date %><br>
+      <%= f.date_select :date %>
+    </div>
+    <div class="field">
+      <%= f.label :time %><br>
+      <%= f.time_select :time %>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+<% end %>
+
+
+<%= link_to 'Back', rooms_path %>

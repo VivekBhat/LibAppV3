@@ -1,0 +1,27 @@
+<h1>Advanced Search</h1>
+
+<%= form_for @search, html: {class: "pure-form"} do |s| %>
+
+    <div class="field">
+      <%= s.label :roomNumber %><br />
+      <%= s.text_field :roomNumber %>
+    </div>
+
+    <div class="field">
+      <%= s.label :size %><br>
+      <%= s.select :size, ['4', '6', '8'] %>
+    </div>
+    <div class="field">
+      <%= s.label :status %><br>
+      <%= s.select :status, ['available', 'booked'] %>
+    </div>
+    <div class="field">
+      <%= s.label :building %><br>
+      <%= s.select :building, ['James B. Hunt', 'D.H. Hill' ] %>
+    </div>
+
+    <div class = "action"><%= s.submit "Search", class: "pure-button pure-button-primary" %></div>
+
+<% end %>
+
+<p> <%= link_to 'Back', rooms_path %></p>

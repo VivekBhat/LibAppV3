@@ -1,0 +1,2 @@
+module BookingHistroysHelper
+end

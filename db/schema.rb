@@ -10,7 +10,45 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160925025740) do
+ActiveRecord::Schema.define(version: 20160925200250) do
+
+  create_table "booking_histroys", force: :cascade do |t|
+    t.time     "from"
+    t.time     "to"
+    t.date     "date"
+    t.integer  "rooms_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["rooms_id"], name: "index_booking_histroys_on_rooms_id"
+  end
+
+  create_table "booking_histroys_rooms", force: :cascade do |t|
+    t.integer "booking_histroy_id"
+    t.integer "room_id"
+    t.index ["booking_histroy_id", "room_id"], name: "index_booking_histroys_rooms_on_booking_histroy_id_and_room_id", unique: true
+    t.index ["booking_histroy_id"], name: "index_booking_histroys_rooms_on_booking_histroy_id"
+    t.index ["room_id"], name: "index_booking_histroys_rooms_on_room_id"
+  end
+
+  create_table "rooms", force: :cascade do |t|
+    t.integer  "roomNumber"
+    t.string   "size"
+    t.string   "status"
+    t.string   "building"
+    t.date     "date"
+    t.time     "time"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "searches", force: :cascade do |t|
+    t.integer  "roomNumber"
+    t.string   "size"
+    t.string   "status"
+    t.string   "building"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "name"

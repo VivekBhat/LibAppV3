@@ -1,0 +1,48 @@
+<p id="notice"><%= notice %></p>
+<style>
+  table, th, td {
+    border: 1px solid black;
+  }
+</style>
+<h1>Listing Rooms</h1>
+
+<%= form_tag rooms_path, :method => 'get' do %>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search" %>
+<% end %>
+
+<%= link_to "Advanced Search", new_search_path %>
+<br><br>
+
+<table>
+  <thead>
+  <tr>
+    <th>Room Number</th>
+    <th>Building</th>
+    <th>Size</th>
+    <th> Schedule</th>
+    <th colspan="5">Actions</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @rooms.each do |room| %>
+      <tr>
+        <td><%= room.roomNumber %></td>
+        <td><%= room.building %></td>
+        <td><%= room.size %></td>
+        <td><%= @bookedSlots[room.roomNumber] %></td>
+        <td><%= link_to 'Show', room %></td>
+        <td><%= link_to 'Edit', edit_room_path(room) %></td>
+        <td><%= link_to 'Destroy', room, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Book', book_room_path(room) %></td>
+        <td><%= link_to 'Release', releaseBooking_booking_histroy_path(room) %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<br>
+
+
+<%= link_to 'New Room', new_room_path %>
