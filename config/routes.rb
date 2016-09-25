@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'contact/index'
+
+  get 'contact/show'
+
   namespace :logg do
     get 'front/index'
   end
@@ -38,7 +42,7 @@ Rails.application.routes.draw do
   get 'login' =>'sessions#new'
   get 'user' => 'home#show'
   get 'home' =>'home#show'
-  get 'contact' =>'home#show'
+  get 'contact' =>'contact#show'
   get 'logout' =>'sessions#destroy'
 
   post 'login' => 'sessions#create'
