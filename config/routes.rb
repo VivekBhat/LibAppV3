@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
+<<<<<<< HEAD
   resources :reservation_histroys
+=======
+  resources :adminpages
+>>>>>>> 378f9895d1468d5016cb1ededd02a305178b951c
   get 'pages/show'
 
   get 'pages/index'
@@ -71,6 +75,5 @@ Rails.application.routes.draw do
     end
   end
 
-get 'room' => 'rooms#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

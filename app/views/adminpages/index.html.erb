@@ -1,0 +1,33 @@
+<div class="jumbotron">
+  <h1>Admin Page</h1>
+<p id="notice"><%= notice %></p>
+
+<table class =" table table-hover">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Password</th>
+      <th>Actions</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @adminpages.each do |adminpage| %>
+      <tr>
+        <td><%= adminpage.name %></td>
+        <td><%= adminpage.email %></td>
+        <td><%= adminpage.password %></td>
+        <td><%= link_to 'Show', adminpage %></td>
+        <td><%= link_to 'Edit', edit_adminpage_path(adminpage) %></td>
+        <td><%= link_to 'Destroy', adminpage, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Create New Admin', new_adminpage_path, class: 'btn btn-success' %>
+</div>
