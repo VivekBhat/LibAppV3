@@ -48,30 +48,19 @@
     <div class="container">
       <div class="row">
         <div class="col-md-8">
-          <div class="col-md-6">
+          <%= yield %>
 
-          </div>
-          <div class="col-md-6">
-
-          </div>
         </div>
         <div class="col-md-4">
-          <ul class="list-group">
-            <li class="list-group-item">Cras justo odio</li>
-            <li class="list-group-item">Dapibus ac facilisis in</li>
-            <li class="list-group-item">Morbi leo risus</li>
-            <li class="list-group-item">Porta ac consectetur ac</li>
-            <li class="list-group-item">Vestibulum at eros</li>
-          </ul>
+<%= render 'partials/sidebar' %>
         </div>
       </div>
 
     </div>
   </section>
 
-  <footer>
-    <p>Copyright &copy; 2016, LibApp <a href="login.html">Admin Login</a></p>
-  </footer>
+  <%= render 'partials/footer' %>
+
   <!-- Bootstrap core JavaScript
   ================================================== -->
   <!-- Placed at the end of the document so the pages load faster -->
