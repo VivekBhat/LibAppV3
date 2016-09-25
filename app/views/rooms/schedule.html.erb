@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+<style>
+  table, th, td {
+    border: 1px solid black;
+  }
+</style>
+<h1>Schedule for Room <%= @room.roomNumber%></h1>
+
+<table>
+  <thead>
+  <tr>
+    <th>Room Number</th>
+    <th>Booked From</th>
+    <th>Booked To</th>
+    <th>Booked On</th>
+    <th>Booked by</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @bookedSlots.each do |slot| %>
+      <tr>
+        <td><%= slot.rooms_id %></td>
+        <td><%= slot.from.strftime('%H:%M') %></td>
+        <td><%= slot.to.strftime('%H:%M') %></td>
+        <td><%= slot.date %></td>
+        <td>User</td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<br>
+
+
+<%= link_to 'Book Room', book_room_path(@room) %>
+<br>
+<%= link_to 'Back', rooms_url %>

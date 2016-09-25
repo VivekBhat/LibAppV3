@@ -1,0 +1,1 @@
+json.partial! "reservation_histroys/reservation_histroy", reservation_histroy: @reservation_histroy

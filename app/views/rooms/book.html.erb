@@ -1,8 +1,4 @@
 <h1>Book Room <%=@room.roomNumber %></h1>
-<% if flash[:warning] %>
-    <div class="notice"><%= flash[:warning] %></div>
-<% end %>
-
 <%= form_for(@room, url: validBooking_booking_histroy_path(@room),method: :post) do |f| %>
     <% if @room.errors.any? %>
         <div id="error_explanation">

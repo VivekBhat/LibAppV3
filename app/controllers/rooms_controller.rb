@@ -6,18 +6,12 @@ class RoomsController < ApplicationController
   def index
 
     @rooms = Room.all
+    @rooms = Room.search(params[:search])
+  end
 
-    roomids = Room.where("").ids
-    listOfRooms = Array.new
-    roomids.each do |r|
-      roomFound = Room.find(r)
-      listOfRooms << roomFound
-    end
-
-    entireBookingHistroy = Hash.new
-
-    listOfRooms.each do |room|
-      whereClause = "rooms_id = #{room.id}"
+  def schedule
+    @room = Room.find(params[:id])
+      whereClause = "rooms_id = #{params[:id]}"
       ids = BookingHistroy.where(whereClause).ids
       bookingHistroyRoom = []
       if(!ids.empty?)
@@ -28,23 +22,15 @@ class RoomsController < ApplicationController
           end
         end
       end
-      if(!bookingHistroyRoom.empty?)
-        entireBookingHistroy[room.roomNumber] = bookingHistroyRoom
-      end
-    end
 
-    @bookedSlots = Hash.new
-
-    entireBookingHistroy.each_key do |key|
-      allSlotsRoom = ""
-      entireBookingHistroy[key].each do |bh|
-        timeSlot = "#{bh.from.strftime('%H:%M')} - #{bh.to.strftime('%H:%M')} on #{bh.date}   "
-        allSlotsRoom << timeSlot
-      end
-      @bookedSlots[key] = allSlotsRoom
+      #allSlotsRoom = ""
+      #bookingHistroyRoom.each do |booking|
+       # timeSlot = "#{booking.from.strftime('%H:%M')} - #{booking.to.strftime('%H:%M')} on #{bh.date}   "
+        #allSlotsRoom << timeSlot
+      #end
+      @bookedSlots = bookingHistroyRoom
+    puts "End"
     end
-    @rooms = Room.search(params[:search])
-  end
 
   # GET /rooms/1
   # GET /rooms/1.json

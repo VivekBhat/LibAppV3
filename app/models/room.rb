@@ -4,6 +4,9 @@ class Room < ApplicationRecord
   enum building: { :Hunt => "James B. Hunt", :Hill => "D.H. Hill"}
   enum size: {:small => "4", :medium => "6", :large => "8"}
 
+  validates_uniqueness_of :roomNumber
+  validates_numericality_of :roomNumber, :only_integer => true
+
   def self.search(search)
     if search
       where(["building LIKE ?", "%#{search}%"])

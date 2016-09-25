@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :reservation_histroys
   get 'pages/show'
 
   get 'pages/index'
@@ -59,6 +60,7 @@ Rails.application.routes.draw do
   resources :rooms do
     member do
       get 'book'
+      get 'schedule'
     end
   end
 

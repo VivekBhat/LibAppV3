@@ -1,0 +1,2 @@
+class ReservationHistroy < ApplicationRecord
+end
