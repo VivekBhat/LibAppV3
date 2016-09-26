@@ -1,0 +1,21 @@
+                         List of relations
+ Schema |             Name              |   Type   |     Owner      
+--------+-------------------------------+----------+----------------
+ public | adminpages                    | table    | phqmrtskbbgggn
+ public | adminpages_id_seq             | sequence | phqmrtskbbgggn
+ public | ar_internal_metadata          | table    | phqmrtskbbgggn
+ public | booking_histroys              | table    | phqmrtskbbgggn
+ public | booking_histroys_id_seq       | sequence | phqmrtskbbgggn
+ public | booking_histroys_rooms        | table    | phqmrtskbbgggn
+ public | booking_histroys_rooms_id_seq | sequence | phqmrtskbbgggn
+ public | reservation_histroys          | table    | phqmrtskbbgggn
+ public | reservation_histroys_id_seq   | sequence | phqmrtskbbgggn
+ public | rooms                         | table    | phqmrtskbbgggn
+ public | rooms_id_seq                  | sequence | phqmrtskbbgggn
+ public | schema_migrations             | table    | phqmrtskbbgggn
+ public | searches                      | table    | phqmrtskbbgggn
+ public | searches_id_seq               | sequence | phqmrtskbbgggn
+ public | users                         | table    | phqmrtskbbgggn
+ public | users_id_seq                  | sequence | phqmrtskbbgggn
+(16 rows)
+

@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
 
       redirect_to adminpages_path
 
-    elsif (user && user.password_digest == params[:password] && user.ornot == 0)
+    elsif (user && user.password_digest == params[:password])
 
       session[:user_id] = user.id
       flash[:success] = "Welcome to Library App User:  #{params[:name]}"
