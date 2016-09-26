@@ -22,6 +22,7 @@
         <td>Admin</td>
         <td><%= link_to 'Show', adminpage %></td>
         <td><%= link_to 'Destroy', adminpage, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Edit', edit_user_path(adminpage) %></td>
       </tr>
 
       <%else %>
