@@ -4,6 +4,7 @@ class SessionsController < ApplicationController
 
   def create
     user = User.find_by(email: params[:email])
+    a = user.ornot
     if (user && user.password_digest == params[:password] && user.ornot == 1)
 
       session[:user_id] = user.id

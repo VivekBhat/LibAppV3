@@ -24,8 +24,9 @@ class AdminpagesController < ApplicationController
   # POST /adminpages
   # POST /adminpages.json
   def create
-    adminpage_params[:ornot] = 1
-    @adminpage = User.new(adminpage_params)
+    paramters = adminpage_params
+    paramters[:ornot] = 1
+    @adminpage = User.new(paramters)
 
     respond_to do |format|
       if @adminpage.save
