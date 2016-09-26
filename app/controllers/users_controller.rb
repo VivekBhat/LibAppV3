@@ -15,8 +15,9 @@ class UsersController < ApplicationController
   end
 
   def create
-    user_params[:ornot] = 0
-    @user = User.new(user_params)
+    paramters = user_params
+    paramters[:ornot] = 0
+    @user = User.new(paramters)
 
     respond_to do |format|
       if @user.save
@@ -42,6 +43,19 @@ class UsersController < ApplicationController
       end
     end
 
+  end
+
+  def destroy
+    @user = User.find(params[:id])
+    @usermsg = "Library member : #{@user.name} was successfully destroyed"
+    if(@user.ornot == 1)
+      @usermsg = "Admin : #{@user.name} was successfully destroyed"
+    end
+    @user.destroy
+    respond_to do |format|
+      format.html { redirect_to adminpages_url, notice: @usermsg }
+      format.json { head :no_content }
+    end
   end
 
   private
