@@ -4,7 +4,7 @@ class AdminpagesController < ApplicationController
   # GET /adminpages
   # GET /adminpages.json
   def index
-    @adminpages = Adminpage.all
+    @adminpages = User.all
   end
 
   # GET /adminpages/1
@@ -24,11 +24,12 @@ class AdminpagesController < ApplicationController
   # POST /adminpages
   # POST /adminpages.json
   def create
-    @adminpage = Adminpage.new(adminpage_params)
+    adminpage_params[:ornot] = 1
+    @adminpage = User.new(adminpage_params)
 
     respond_to do |format|
       if @adminpage.save
-        format.html { redirect_to @adminpage, notice: 'Adminpage was successfully created.' }
+        format.html { redirect_to @adminpage, notice: 'Admin was added successfully created.' }
         format.json { render :show, status: :created, location: @adminpage }
       else
         format.html { render :new }
@@ -42,7 +43,7 @@ class AdminpagesController < ApplicationController
   def update
     respond_to do |format|
       if @adminpage.update(adminpage_params)
-        format.html { redirect_to @adminpage, notice: 'Adminpage was successfully updated.' }
+        format.html { redirect_to @adminpage, notice: 'Admin Updated successfully updated.' }
         format.json { render :show, status: :ok, location: @adminpage }
       else
         format.html { render :edit }

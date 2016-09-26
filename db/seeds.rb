@@ -8,6 +8,13 @@
 User.create(
     name: "Admin",
     email: "Admin@example.com",
-    password_digest: 'password',
+    password_digest: 'pass',
     ornot: '1'
+)
+
+User.create(
+    name: "User",
+    email: "user@example.com",
+    password_digest: 'pass',
+    ornot: '0'
 )
