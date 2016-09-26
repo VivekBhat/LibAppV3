@@ -14,7 +14,7 @@ User.create(
 
 User.create(
     name: "User",
-    email: "user@example.com",
+    email: "users@example.com",
     password_digest: 'pass',
     ornot: '0'
 )

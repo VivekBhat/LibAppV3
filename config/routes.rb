@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :searches
   resources :booking_histroys
   resources :rooms
+  resources :users
   
   get 'contact/index'
 
@@ -37,23 +38,17 @@ Rails.application.routes.draw do
     get 'front/show'
   end
 
-  namespace :user do
-    get 'front/index'
-  end
-
-  namespace :user do
-    get 'front/show'
-  end
 
   root 'home#show'
 
   get 'logg' =>'logg/front#show'
   get 'login' =>'sessions#new'
-  get 'user' => 'home#show'
+  get 'users' => 'home#show'
   get 'home' =>'home#show'
   get 'contact' =>'contact#show'
   get 'logout' =>'sessions#destroy'
   get 'about' =>'about#index'
+
 
   post 'login' => 'sessions#create'
   get 'admin' =>'admin/front#show'
