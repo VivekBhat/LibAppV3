@@ -1,0 +1,42 @@
+<%= form_for(reservation_histroy) do |f| %>
+  <% if reservation_histroy.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(reservation_histroy.errors.count, "error") %> prohibited this reservation_histroy from being saved:</h2>
+
+      <ul>
+      <% reservation_histroy.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :from %>
+    <%= f.time_select :from %>
+  </div>
+
+  <div class="field">
+    <%= f.label :to %>
+    <%= f.time_select :to %>
+  </div>
+
+  <div class="field">
+    <%= f.label :date %>
+    <%= f.date_select :date %>
+  </div>
+
+  <div class="field">
+    <%= f.label :rooms_id %>
+    <%= f.number_field :rooms_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :users_id %>
+    <%= f.number_field :users_id %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  from: 2016-09-25 18:43:35
+  to: 2016-09-25 18:43:35
+  date: 2016-09-25
+  rooms_id: 1
+  users_id: 1
+
+two:
+  from: 2016-09-25 18:43:35
+  to: 2016-09-25 18:43:35
+  date: 2016-09-25
+  rooms_id: 1
+  users_id: 1

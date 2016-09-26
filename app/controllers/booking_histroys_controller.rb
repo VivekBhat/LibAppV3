@@ -82,6 +82,12 @@ class BookingHistroysController < ApplicationController
               hashArg = {:from => myTime, :to => toTime, :date => myDate, :rooms_id => idRoom}
               @booking_histroy = BookingHistroy.new(hashArg)
               @booking_histroy.save
+
+              #Adding it to the reservation histroy
+              hashArgReservation = {:from => myTime, :to => toTime, :date => myDate, :rooms_id => idRoom, :users_id => 1}
+              @reservation_histroy = ReservationHistroy.new(hashArgReservation)
+              @reservation_histroy.save
+
               redirect_to rooms_url
             else
               redirect_to book_room_url

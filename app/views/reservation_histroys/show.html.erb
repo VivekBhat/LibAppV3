@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>From:</strong>
+  <%= @reservation_histroy.from %>
+</p>
+
+<p>
+  <strong>To:</strong>
+  <%= @reservation_histroy.to %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @reservation_histroy.date %>
+</p>
+
+<p>
+  <strong>Rooms:</strong>
+  <%= @reservation_histroy.rooms_id %>
+</p>
+
+<p>
+  <strong>Users:</strong>
+  <%= @reservation_histroy.users_id %>
+</p>
+
+<%= link_to 'Edit', edit_reservation_histroy_path(@reservation_histroy) %> |
+<%= link_to 'Back', reservation_histroys_path %>

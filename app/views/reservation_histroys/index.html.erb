@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Reservation Histroys</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>From</th>
+      <th>To</th>
+      <th>Date</th>
+      <th>Rooms</th>
+      <th>Users</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @reservation_histroys.each do |reservation_histroy| %>
+      <tr>
+        <td><%= reservation_histroy.from %></td>
+        <td><%= reservation_histroy.to %></td>
+        <td><%= reservation_histroy.date %></td>
+        <td><%= reservation_histroy.rooms_id %></td>
+        <td><%= reservation_histroy.users_id %></td>
+        <td><%= link_to 'Show', reservation_histroy %></td>
+        <td><%= link_to 'Edit', edit_reservation_histroy_path(reservation_histroy) %></td>
+        <td><%= link_to 'Destroy', reservation_histroy, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Reservation Histroy', new_reservation_histroy_path %>
