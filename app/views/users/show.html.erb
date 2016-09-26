@@ -1,2 +1,15 @@
-<h1>User::Front#show</h1>
-<p>Find me in app/views/user/front/show.html.erb</p>
+<h1>Your profile details</h1>
+<%= form_for(@user) do |f| %>
+
+    <div class="field">
+      Name :
+      <%= @user.name %>
+    </div>
+    <div class="field">
+      Email:
+      <%= @user.email%>
+    </div>
+
+<% end %>
+
+<%= link_to 'Back to Room Booking', rooms_url%>
