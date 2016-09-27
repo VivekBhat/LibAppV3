@@ -11,7 +11,4 @@ class User < ApplicationRecord
 
   validates :password_digest, presence: true, length: { minimum: 4 }
 
-  class << self
-    attr_accessor :currentUserId
-  end
 end
