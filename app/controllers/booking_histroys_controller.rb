@@ -84,7 +84,7 @@ class BookingHistroysController < ApplicationController
               @booking_histroy.save
 
               #Adding it to the reservation histroy
-              hashArgReservation = {:from => myTime, :to => toTime, :date => myDate, :rooms_id => idRoom, :users_id => User.currentUserId}
+              hashArgReservation = {:from => myTime, :to => toTime, :date => myDate, :rooms_id => idRoom, :users_id => session[:user_id]}
               @reservation_histroy = ReservationHistroy.new(hashArgReservation)
               @reservation_histroy.save
 
