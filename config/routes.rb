@@ -51,7 +51,7 @@ Rails.application.routes.draw do
 
 
   post 'login' => 'sessions#create'
-  get 'admin' =>'admin/front#show'
+  get 'admin' =>'adminpages#index'
 
   resources :rooms do
     member do
