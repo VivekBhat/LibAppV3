@@ -7,12 +7,16 @@ class RoomsController < ApplicationController
 
     @rooms = Room.all
     @rooms = Room.search(params[:search])
-
-    loggedUser = User.find(session[:user_id])
-    if(loggedUser.ornot == 1)
-      @superuser = true
+    if(session[:user_id] == nil)
+      flash[:warning] = "Login to book a room"
+      redirect_to login_url
     else
-      @superuser = false
+      loggedUser = User.find(session[:user_id])
+      if(loggedUser.ornot == 1)
+        @superuser = true
+      else
+        @superuser = false
+      end
     end
   end
 
