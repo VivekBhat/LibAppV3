@@ -7,14 +7,14 @@ class SessionsController < ApplicationController
     if (user && user.password_digest == params[:password] && user.ornot == 1)
 
       session[:user_id] = user.id
-      flash[:success] = "Welcome to Library App Admin  #{params[:name]}"
+      flash[:success] = "Welcome to Library App Admin" 
 
       redirect_to adminpages_path
 
     elsif (user && user.password_digest == params[:password])
 
       session[:user_id] = user.id
-      flash[:success] = "Welcome to Library App User:  #{params[:name]}"
+      flash[:success] = "Welcome to Library App User"
 
       redirect_to rooms_path 
 

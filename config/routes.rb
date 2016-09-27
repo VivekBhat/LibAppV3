@@ -51,7 +51,7 @@ Rails.application.routes.draw do
 
 
   post 'login' => 'sessions#create'
-  get 'admin' =>'admin/front#show'
+  get 'admin' =>'adminpages#index'
 
   resources :rooms do
     member do
@@ -64,6 +64,12 @@ Rails.application.routes.draw do
     member do
       post 'validBooking'
       get 'releaseBooking'
+    end
+  end
+
+  resources :adminpages do
+    member do
+      get 'userBookingHistroy'
     end
   end
 

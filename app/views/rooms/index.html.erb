@@ -23,7 +23,7 @@
     <th>Building</th>
     <th>Size</th>
     <th> Schedule</th>
-    <th colspan="5">Actions</th>
+    <th colspan="5">Actions available</th>
   </tr>
   </thead>
 
@@ -35,8 +35,11 @@
         <td><%= room.size %></td>
         <td><%= link_to 'View Schedule', schedule_room_path(room) %></td>
         <td><%= link_to 'Show', room %></td>
+        <% if(@superuser == true)%>
         <td><%= link_to 'Edit', edit_room_path(room) %></td>
         <td><%= link_to 'Destroy', room, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <% else%>
+            <% end%>
         <td><%= link_to 'Book', book_room_path(room) %></td>
         <td><%= link_to 'Release', releaseBooking_booking_histroy_path(room) %></td>
       </tr>

@@ -7,6 +7,13 @@ class RoomsController < ApplicationController
 
     @rooms = Room.all
     @rooms = Room.search(params[:search])
+
+    loggedUser = User.find(session[:user_id])
+    if(loggedUser.ornot == 1)
+      @superuser = true
+    else
+      @superuser = false
+    end
   end
 
   def schedule
@@ -23,11 +30,6 @@ class RoomsController < ApplicationController
         end
       end
 
-      #allSlotsRoom = ""
-      #bookingHistroyRoom.each do |booking|
-       # timeSlot = "#{booking.from.strftime('%H:%M')} - #{booking.to.strftime('%H:%M')} on #{bh.date}   "
-        #allSlotsRoom << timeSlot
-      #end
       @bookedSlots = bookingHistroyRoom
     puts "End"
     end
