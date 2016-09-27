@@ -7,6 +7,13 @@ class RoomsController < ApplicationController
 
     @rooms = Room.all
     @rooms = Room.search(params[:search])
+
+    loggedUser = User.find(session[:user_id])
+    if(loggedUser.ornot == 1)
+      @superuser = true
+    else
+      @superuser = false
+    end
   end
 
   def schedule
