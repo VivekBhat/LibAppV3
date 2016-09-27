@@ -32,6 +32,7 @@
         <td>User</td>
         <td><%= link_to 'Show', adminpage %></td>
         <td><%= link_to 'Destroy', adminpage, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Booking History', users_path %></td>
       </tr>
       <% end%>
     <% end %>
@@ -41,6 +42,7 @@
 <br>
 
 <%= link_to 'Create New Admin', new_adminpage_path, class: 'btn btn-success' %>
+  <%= link_to 'Create Library Member', new_user_path, class: 'btn btn-success' %>
 <%= link_to 'View Rooms', rooms_path, class: 'btn btn-success' %>
 
 </div>

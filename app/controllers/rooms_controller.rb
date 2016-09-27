@@ -23,11 +23,6 @@ class RoomsController < ApplicationController
         end
       end
 
-      #allSlotsRoom = ""
-      #bookingHistroyRoom.each do |booking|
-       # timeSlot = "#{booking.from.strftime('%H:%M')} - #{booking.to.strftime('%H:%M')} on #{bh.date}   "
-        #allSlotsRoom << timeSlot
-      #end
       @bookedSlots = bookingHistroyRoom
     puts "End"
     end
