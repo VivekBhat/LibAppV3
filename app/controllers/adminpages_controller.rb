@@ -21,6 +21,17 @@ class AdminpagesController < ApplicationController
   def edit
   end
 
+  def userBookingHistroy
+    @userBookingHistroy = Array.new
+    @adminpage = User.find(params[:id])
+    whereClause = "users_id = #{@adminpage.id}"
+    ids = ReservationHistroy.where(whereClause).ids
+    ids.each do |id|
+      bh = ReservationHistroy.find(id)
+      @userBookingHistroy << bh
+    end
+  end
+
   # POST /adminpages
   # POST /adminpages.json
   def create
