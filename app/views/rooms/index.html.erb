@@ -10,7 +10,7 @@
 
 <%= form_tag rooms_path, :method => 'get' do %>
     <%= text_field_tag :search, params[:search] %>
-    <%= submit_tag "Search" %>
+    <%= submit_tag "Search via Building" %>
 <% end %>
 
 <%= link_to "Advanced Search", new_search_path %>
