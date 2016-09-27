@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+<style>
+  table, th, td {
+    border: 1px solid black;
+  }
+</style>
+<h1>User Booking History</h1>
+
+<table>
+  <thead>
+  <tr>
+    <th>From</th>
+    <th>To</th>
+    <th>Date</th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @userBookingHistroy.each do |booking_histroy| %>
+      <tr>
+        <td><%= booking_histroy.from.strftime('%H:%M') %></td>
+        <td><%= booking_histroy.to.strftime('%H:%M') %></td>
+        <td><%= booking_histroy.date %></td>
+        <td><%= link_to 'Destroy', booking_histroy, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Back', adminpages_url %>

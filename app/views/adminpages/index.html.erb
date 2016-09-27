@@ -8,8 +8,7 @@
       <th>Name</th>
       <th>Email</th>
       <th>Role</th>
-      <th>Actions</th>
-      <th colspan="3"></th>
+      <th colspan="4">Actions Available</th>
     </tr>
   </thead>
 
@@ -21,12 +20,17 @@
         <td><%= adminpage.email %></td>
         <td>Admin</td>
         <td><%= link_to 'Show', adminpage %></td>
+        <%if((adminpage.email != "Admin@example.com") && (adminpage.id != session[:user_id]))%>
         <td><%= link_to 'Destroy', adminpage, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <% if(session[:user_id] == adminpage.id) %>
+         <%else%>
+            <td></td>
+        <%end%>
+        <% if((session[:user_id] == adminpage.id) && (adminpage.email != "Admin@example.com")) %>
             <td><%= link_to 'Edit', edit_user_path(adminpage) %></td>
         <% else %>
             <td></td>
         <% end %>
+        <td></td>
       </tr>
 
       <%else %>
@@ -36,6 +40,7 @@
         <td>User</td>
         <td><%= link_to 'Show', adminpage %></td>
         <td><%= link_to 'Destroy', adminpage, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td></td>
         <td><%= link_to 'Booking History', userBookingHistroy_adminpage_path(adminpage) %></td>
       </tr>
       <% end%>
