@@ -30,7 +30,7 @@
   <tbody>
   <% @rooms.each do |room| %>
       <tr>
-        <td><%= room.roomNumber %></td>
+        <td><%= room.roomnumber %></td>
         <td><%= room.building %></td>
         <td><%= room.size %></td>
         <td><%= link_to 'View Schedule', schedule_room_path(room) %></td>

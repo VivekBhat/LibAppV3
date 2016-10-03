@@ -1,7 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  roomNumber: 1
+  roomnumber: 1
   size: MyString
   status: MyString
   building: MyString
@@ -9,7 +9,7 @@ one:
   time: 2016-09-25 15:40:41
 
 two:
-  roomNumber: 1
+  roomnumber: 1
   size: MyString
   status: MyString
   building: MyString
