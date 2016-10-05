@@ -2,7 +2,7 @@ class SearchesController < ApplicationController
 
   def new
     @search = Search.new
-    @roomNumber = Room.uniq.pluck(:roomNumber)
+    @roomnumber = Room.uniq.pluck(:roomnumber)
   end
 
   def create
@@ -16,6 +16,6 @@ class SearchesController < ApplicationController
 
   private
   def search_params
-    params.require(:search).permit(:roomNumber, :size, :status, :building)
+    params.require(:search).permit(:roomnumber, :size, :status, :building)
   end
 end

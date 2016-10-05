@@ -1,4 +1,4 @@
-<h1>Book Room <%=@room.roomNumber %></h1>
+<h1>Book Room <%=@room.roomnumber %></h1>
 <%= form_for(@room, url: validBooking_booking_histroy_path(@room),method: :post) do |f| %>
     <% if @room.errors.any? %>
         <div id="error_explanation">
@@ -13,7 +13,7 @@
     <% end %>
 
     <br>
-    Room Number : <%= @room.roomNumber %>
+    Room Number : <%= @room.roomnumber %>
     <br>
 
     <br>

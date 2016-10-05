@@ -17,7 +17,7 @@ class SearchesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create search" do
     assert_difference('Search.count') do
-      post searches_url, params: { search: { building: @search.building, roomNumber: @search.roomNumber, size: @search.size, status: @search.status } }
+      post searches_url, params: { search: { building: @search.building, roomnumber: @search.roomnumber, size: @search.size, status: @search.status } }
     end
 
     assert_redirected_to search_url(Search.last)
@@ -34,7 +34,7 @@ class SearchesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update search" do
-    patch search_url(@search), params: { search: { building: @search.building, roomNumber: @search.roomNumber, size: @search.size, status: @search.status } }
+    patch search_url(@search), params: { search: { building: @search.building, roomnumber: @search.roomnumber, size: @search.size, status: @search.status } }
     assert_redirected_to search_url(@search)
   end
 
