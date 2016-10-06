@@ -21,6 +21,18 @@ class ReservationHistroysController < ApplicationController
   def edit
   end
 
+  def viewHistroy
+    @reservation_histroy = Array.new
+    whereClause = "users_id = #{session[:user_id]}"
+    ids = ReservationHistroy.where(whereClause).ids
+    ids.each do |id|
+      rh = ReservationHistroy.find(id)
+      if(rh != nil)
+        @reservation_histroy << rh
+      end
+    end
+  end
+
   # POST /reservation_histroys
   # POST /reservation_histroys.json
   def create
