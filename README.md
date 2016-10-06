@@ -4,7 +4,7 @@
 
 ###Some Login Credential:
 
-Privelege|email|password
+Privilege|email|password
 -------|-------|----------
 Superadmin|Admin@example.com|pass
 test user|users@example.com|pass
