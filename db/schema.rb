@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20161006031232) do
-=======
-ActiveRecord::Schema.define(version: 20160926235432) do
->>>>>>> 2e629ccab0544f5462bc5094e894bf486d5d0c67
 
   create_table "adminpages", force: :cascade do |t|
     t.string   "name"
@@ -64,7 +60,7 @@ ActiveRecord::Schema.define(version: 20160926235432) do
   end
 
   create_table "searches", force: :cascade do |t|
-    t.integer  "roomNumber"
+    t.integer  "roomnumber"
     t.string   "size"
     t.string   "status"
     t.string   "building"
