@@ -1,6 +1,5 @@
 class RoomsController < ApplicationController
   before_action :set_room, only: [:show, :edit, :update, :destroy]
-
   # GET /rooms
   # GET /rooms.json
   def index
@@ -89,6 +88,17 @@ class RoomsController < ApplicationController
   # DELETE /rooms/1
   # DELETE /rooms/1.json
   def destroy
+    whereClause = "rooms_id = #{@room.id}"
+    @bhc = BookingHistroysController.new
+
+git     ids = BookingHistroy.where(whereClause).ids
+    ids.each do |id|
+      bh = BookingHistroy.find(id)
+      if(bh != nil)
+        @bhc.deleteBooking(bh)
+      end
+    end
+
     @room.destroy
     respond_to do |format|
       format.html { redirect_to rooms_url, notice: 'Room was successfully destroyed.' }

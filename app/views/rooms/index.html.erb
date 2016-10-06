@@ -5,7 +5,10 @@
     border: 1px solid black;
   }
 </style>
-<h1>Book A Room<%= link_to 'New Room', new_room_path, class:'btn btn-success pull-right' %>
+<h1>Book A Room
+  <% if(@superuser == true)%>
+  <%= link_to 'New Room', new_room_path, class:'btn btn-success pull-right' %>
+      <%end%>
 </h1>
 
 <%= form_tag rooms_path, :method => 'get' do %>
@@ -52,4 +55,4 @@
 
 </div>
 
-<%= link_to 'Edit your profile', edit_user_path(1) %>
+<%= link_to 'Edit your profile', edit_user_path(session[:user_id]) %>

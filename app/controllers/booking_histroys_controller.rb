@@ -141,10 +141,40 @@ class BookingHistroysController < ApplicationController
     end
   end
 
+  def deleteBooking(bookingHistroy)
+    @booking_histroy = bookingHistroy
+    whereClause = "rooms_id = #{@booking_histroy.rooms_id}"
+    ids = ReservationHistroy.where(whereClause).ids
+    ids.each do |id|
+      rh = ReservationHistroy.find(id)
+      if(rh != nil)
+            rh.destroy
+      end
+    end
+    @booking_histroy.destroy
+
+  end
+
   # DELETE /booking_histroys/1
   # DELETE /booking_histroys/1.json
   def destroy
+    whereClause = "rooms_id = #{@booking_histroy.rooms_id} AND users_id=#{session[:user_id]}"
+    #AND :to=#{@booking_histroy.to} AND :date=#{@booking_histroy.date}"
+    ids = ReservationHistroy.where(whereClause).ids
+    ids.each do |id|
+      rh = ReservationHistroy.find(id)
+      if(rh != nil)
+        if(rh.from == @booking_histroy.from)
+          if(rh.to == @booking_histroy.to)
+            if(rh.date == @booking_histroy.date)
+              rh.destroy
+            end
+          end
+        end
+      end
+    end
     @booking_histroy.destroy
+
     respond_to do |format|
       format.html { redirect_to rooms_url, notice: 'Booking histroy was successfully destroyed.' }
       format.json { head :no_content }

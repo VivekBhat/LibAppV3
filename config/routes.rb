@@ -64,6 +64,7 @@ Rails.application.routes.draw do
     member do
       post 'validBooking'
       get 'releaseBooking'
+      get 'deleteBooking'
     end
   end
 
