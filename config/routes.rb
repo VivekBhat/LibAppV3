@@ -68,6 +68,11 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :reservation_histroys do
+    member do
+      get 'viewHistroy'
+    end
+  end
   resources :adminpages do
     member do
       get 'userBookingHistroy'

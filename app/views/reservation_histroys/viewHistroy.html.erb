@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+<style>
+  table, th, td {
+    border: 1px solid black;
+  }
+</style>
+
+<h1>Reservation Histroys</h1>
+
+<table>
+  <thead>
+  <tr>
+    <th>From</th>
+    <th>To</th>
+    <th>Date</th>
+    <th>Rooms</th>
+    <th>Users</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @reservation_histroy.each do |reservation_histroy| %>
+      <tr>
+        <td><%= reservation_histroy.from %></td>
+        <td><%= reservation_histroy.to %></td>
+        <td><%= reservation_histroy.date %></td>
+        <td><%= reservation_histroy.rooms_id %></td>
+        <td><%= reservation_histroy.users_id %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Back to Room Booking', rooms_url %>
