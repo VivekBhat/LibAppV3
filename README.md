@@ -1,10 +1,13 @@
 #LIBRARY APP
 
 ###
-Admin Login Credential:
-email: Admin@example.com
-password: pass
 
+###Some Login Credential:
+
+Privelege|email|password
+-------|-------|----------
+Superadmin|Admin@example.com|pass
+test user|users@example.com|pass
 
 **CSC 517 - OODD**
 
