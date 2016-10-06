@@ -73,3 +73,30 @@ Team Members:
 Vivek Bhat: vbhat@ncsu.edu,
 Saloni Desai: sndesai@ncsu.edu,
 Priyal Jain: pjain12@ncsu.edu
+
+====
+
+##Bug fixes:
+
+* Fixed - Password is now hidden
+
+* Fixed - Advanced Room booking feature is fixed 
+
+* Fixed - Admins/members could delete themself from the MyProfile page.
+
+* Fixed - Reservations and rooms and members should be linked. Deleting any one should have a cascading effect.
+
+* Fixed - Members/Admins can change every thing except their email ids
+
+*  Fixed - Super admin settings cannot be changed at all. This is to make sure no one changes super user details (makes it difficult for others to review).
+
+=====
+
+
+
+###Team Members: 
+
+* Vivek Bhat: vbhat@ncsu.edu,
+* Saloni Desai: sndesai@ncsu.edu,
+* Priyal Jain: pjain12@ncsu.edu
+
