@@ -46,6 +46,16 @@ class UsersController < ApplicationController
 
   def destroy
     @user = User.find(params[:id])
+
+      whereClause = "users_id = #{params[:id]}"
+      ids = ReservationHistroy.where(whereClause).ids
+      ids.each do |id|
+        rh = ReservationHistroy.find(id)
+        if(rh != nil)
+          rh.destroy
+        end
+      end
+
     @usermsg = "Library member : #{@user.name} was successfully destroyed"
     if(@user.ornot == 1)
       @usermsg = "Admin : #{@user.name} was successfully destroyed"

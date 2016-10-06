@@ -22,11 +22,11 @@ class RoomsController < ApplicationController
   def schedule
     @room = Room.find(params[:id])
       whereClause = "rooms_id = #{params[:id]}"
-      ids = BookingHistroy.where(whereClause).ids
+      ids = ReservationHistroy.where(whereClause).ids
       bookingHistroyRoom = []
       if(!ids.empty?)
         ids.each do |x|
-          bh = BookingHistroy.find(x)
+          bh = ReservationHistroy.find(x)
           if(bh != nil)
             bookingHistroyRoom << bh
           end
