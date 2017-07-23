@@ -1,8 +1,6 @@
-#LIBRARY APP
+# LIBRARY APP
 
-###
-
-###Some Login Credential:
+### Some Login Credential:
 
 Privilege|email|password
 -------|-------|----------
@@ -79,7 +77,7 @@ Priyal Jain: pjain12@ncsu.edu
 
 ====
 
-##Bug fixes:
+## Bug fixes:
 
 * Fixed - Password is now hidden
 
