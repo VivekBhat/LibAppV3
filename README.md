@@ -93,9 +93,7 @@ Priyal Jain: pjain12@ncsu.edu
 
 =====
 
-
-
-###Team Members: 
+### Team Members: 
 
 * Vivek Bhat: vbhat@ncsu.edu,
 * Saloni Desai: sndesai@ncsu.edu,
