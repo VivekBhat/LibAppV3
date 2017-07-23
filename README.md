@@ -17,7 +17,6 @@ For accessing the project for the first time,
 
 There are two options:
 
-
 **1) Sign up as a library member.**
 
 => The name, email, password, confirmation should be entered. 
@@ -75,8 +74,6 @@ Vivek Bhat: vbhat@ncsu.edu,
 Saloni Desai: sndesai@ncsu.edu,
 Priyal Jain: pjain12@ncsu.edu
 
-====
-
 ## Bug fixes:
 
 * Fixed - Password is now hidden
@@ -91,7 +88,6 @@ Priyal Jain: pjain12@ncsu.edu
 
 *  Fixed - Super admin settings cannot be changed at all. This is to make sure no one changes super user details (makes it difficult for others to review).
 
-=====
 
 ### Team Members: 
 
